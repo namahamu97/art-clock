@@ -1,0 +1,89 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Art Clock -sample-</title>
+  <script language="JAVASCRIPT" type="TEXT/JAVASCRIPT">
+<!--
+var d=new Array();
+for(i=0;i<10;i++) {
+d[i]=new Image();
+d[i].src="dgtw"+i+".png";
+}
+var pm=new Image;
+pm.src="dgtwp.png";
+var am=new Image;
+am.src="dgtwa.png";
+var dates,min,sec,hour;
+var amPM="am";
+
+function clock() {
+dates=new Date();
+hour=dates.getHours();
+min=dates.getMinutes();
+sec=dates.getSeconds();
+if(hour < 12) {
+amPM=am.src;
+}
+if(hour > 11) {
+amPM=pm.src;
+hour=hour-12;
+}
+if(hour == 0) {
+hour=12;
+}
+if(hour < 10) {
+document["tensHour"].src=d[0].src;
+document["Hour"].src=d[hour].src;
+}
+if(hour > 9) {
+document["tensHour"].src=d[1].src;
+document["Hour"].src=d[hour-10].src;
+}
+if(min < 10) {
+document["tensMin"].src=d[0].src;
+}
+if(min > 9) {
+document["tensMin"].src=d[parseInt(min/10,10)].src;
+}
+document["Min"].src=d[min%10].src;
+if(sec < 10) {
+document["tensSec"].src=d[0].src;
+}
+if(sec > 9) {
+document["tensSec"].src=d[parseInt(sec/10,10)].src;
+}
+document["Sec"].src=d[sec%10].src;
+document["amPM"].src=amPM;
+setTimeout("clock();",100);
+}
+//-->
+</SCRIPT>
+  <link href="layout.css" rel="stylesheet" type="text/css" />
+
+  <style type="text/css">
+    body {
+      background-color: #CCC;
+    }
+  </style>
+</head>
+
+<body onLoad="clock();">
+  <div class="phone">
+    <div class="box">
+      <div class="apm">
+        <img src="dgtwa.png" name="amPM" border="0">
+      </div>
+      <div class="hour"><img src="dgtwbl.png" name="tensHour" border="0"><img src="dgtwbl.png" name="Hour" border="0">
+      </div>
+      <div class="min"><img src="dgtwbl.png" name="tensMin" border="0"><img src="dgtwbl.png" name="Min" border="0">
+      </div>
+      <div class="sec"><img src="dgtwbl.png" name="tensSec" border="0"><img src="dgtwbl.png" name="Sec" border="0">
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+.phone {
+	width: 300px;
+	height: 600px;
+	margin: 0px auto 0px auto;
+	background-image: url(background-02.png);
+	background-repeat: no-repeat;
+	background-position: center top;
+}
+
+.box {
+	margin: 0px auto 0px auto;
+	width: 250px;
+	height: 500px;
+	text-align: center;
+	position: relative;
+	top: 60px;
+}
+
+.apm {
+	position: relative;
+	top: 150px;
+	left: 0px;
+}
+
+.hour {
+	position: relative;
+	top: 160px;
+	left: -59px;
+}
+
+.min {
+	position: relative;
+	top: 136px;
+	left: 0px;
+}
+
+.sec {
+	position: relative;
+	top: 112px;
+	left: 60px;
+}
